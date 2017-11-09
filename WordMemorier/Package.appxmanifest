@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="50707aiorg.earTHsWordLearner" Publisher="CN=2C8CF72B-2749-4B44-BEE8-78FDAC28C744" Version="0.0.2.0" />
+  <mp:PhoneIdentity PhoneProductId="ec42f94c-e422-43f7-a7fc-163897ff3180" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>earTHsWordLearner</DisplayName>
+    <PublisherDisplayName>aiorg</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="WordMemorier.App">
+      <uap:VisualElements DisplayName="earTHsWordLearner" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="错词背诵软件，仿扇贝等应用的功能。词汇表来自csv导入。就一个单词导入加背诵功能，如果你觉得功能不够，欢迎你到{https://github.com/earthdiqiu/WordsMemorizer}继续开发，应用采用GPL协议。修改后你可以自己提交到应用商店或者提交合并请求我们共同开发。" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portraitFlipped" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+</Package>

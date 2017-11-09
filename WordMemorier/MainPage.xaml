@@ -1,0 +1,58 @@
+﻿<Page x:Name="MainPage1"
+    x:Class="WordMemorier.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WordMemorier"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loading="MainPage1_Loading" Unloaded="MainPage1_Unloaded">
+    <Page.Resources>
+        <HorizontalAlignment x:Key="Button_HorizontalAlignment">Stretch</HorizontalAlignment>
+        <VerticalAlignment x:Key="Button_VerticalAlignment">Stretch</VerticalAlignment>
+        <Thickness x:Key="ZeroMargin">10</Thickness>
+        <x:Double x:Key="ButtonfontSize">30</x:Double>
+    </Page.Resources>
+
+    <Grid x:Name="MainGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ProgressRing x:Name="ProcessingRing" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Grid x:Name="SubMainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="52*"/>
+                <RowDefinition x:Name="Selection_Row" Height="209*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="Word" Margin="0" TextWrapping="Wrap" Text="Please Wait..." FontSize="50" TextAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="HansMeaning" Margin="0" TextWrapping="Wrap" Text="Please Wait..." FontSize="30" TextAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
+            <Grid x:Name="Button_Grid" Margin="3" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Button_A" Content="A" HorizontalAlignment="{StaticResource Button_HorizontalAlignment}" Margin="{StaticResource ZeroMargin}" VerticalAlignment="{StaticResource Button_VerticalAlignment}" Grid.Row="0" FontSize="{StaticResource ButtonfontSize}" Background="{ThemeResource CalendarDatePickerBackgroundFocused}" Width="{Binding ActualWidth, ElementName=MainGrid, Mode=OneWay}" Grid.ColumnSpan="5" Click="Button_A_Click"/>
+                <Button x:Name="Button_B" Content="B" HorizontalAlignment="{StaticResource Button_HorizontalAlignment}" Margin="{StaticResource ZeroMargin}" VerticalAlignment="{StaticResource Button_VerticalAlignment}" Grid.Row="1" FontSize="{StaticResource ButtonfontSize}" Background="{ThemeResource CalendarDatePickerBackgroundFocused}" Width="{Binding ActualWidth, ElementName=MainGrid, Mode=OneWay}" Grid.ColumnSpan="5" Click="Button_B_Click"/>
+                <Button x:Name="Button_C" Content="C" HorizontalAlignment="{StaticResource Button_HorizontalAlignment}" Margin="{StaticResource ZeroMargin}" VerticalAlignment="{StaticResource Button_VerticalAlignment}" Grid.Row="2" FontSize="{StaticResource ButtonfontSize}" Background="{ThemeResource CalendarDatePickerBackgroundFocused}" Width="{Binding ActualWidth, ElementName=MainGrid, Mode=OneWay}" Grid.ColumnSpan="5" Click="Button_C_Click"/>
+                <Button x:Name="Button_D" Content="D" HorizontalAlignment="{StaticResource Button_HorizontalAlignment}" Margin="{StaticResource ZeroMargin}" VerticalAlignment="{StaticResource Button_VerticalAlignment}" Grid.Row="3" FontSize="{StaticResource ButtonfontSize}" Background="{ThemeResource CalendarDatePickerBackgroundFocused}" Width="{Binding ActualWidth, ElementName=MainGrid, Mode=OneWay}" Grid.ColumnSpan="5" Click="Button_D_Click"/>
+                <TextBlock x:Name="Sum" HorizontalAlignment="Center" Margin="0" Grid.Row="4" Grid.Column="0" TextWrapping="Wrap" Text="共:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock x:Name="Today" HorizontalAlignment="Center" Margin="0" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="今天:" VerticalAlignment="Center" FontSize="18"/>
+                <TextBlock x:Name="Days" HorizontalAlignment="Center" Margin="0" Grid.Row="4" Grid.Column="2" TextWrapping="Wrap" Text="共学:" VerticalAlignment="Center" FontSize="18"/>
+                <Button x:Name="Input" HorizontalAlignment="Center" Margin="0" Grid.Row="4" Grid.Column="3" Content="导入" VerticalAlignment="Center" FontSize="18" Click="Input_ClickAsync"/>
+                <TextBlock x:Name="unuse" Visibility="Collapsed" HorizontalAlignment="Center" Margin="0" Grid.Row="4" Grid.Column="4" TextWrapping="Wrap" Text="共" VerticalAlignment="Center" FontSize="18"/>
+
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
